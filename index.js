@@ -8,7 +8,7 @@ let files = await fs.readdir(basepath);
 
 for (const file of files) {
   let ext = path.extname(file);
-  if (ext != ".json" && ext != ".js") {
+  if (ext != ".json" && ext != ".js" && ext != ".html" && ext != ".css") {
     if (fsn.existsSync(path.join(basepath, ext))) {
       fs.rename(path.join(basepath, file), path.join(basepath, ext , file));
     } else {
